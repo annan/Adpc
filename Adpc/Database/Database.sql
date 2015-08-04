@@ -11,4 +11,4 @@ CREATE TABLE `airlines`(
   PRIMARY KEY `airline_id_key` (`airline_id`) ,
   UNIQUE KEY `airline_id_code` (`airline_code`),
   );
-
+  .
