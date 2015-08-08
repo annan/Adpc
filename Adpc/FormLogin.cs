@@ -14,5 +14,28 @@ namespace Adpc
         {
             InitializeComponent();
         }
+
+        private void buttonLogin_Click(object sender, EventArgs e)
+        {
+            if (!ValidateLoginForm()) { labelError.Text = "Required Fields!"; }
+        }
+
+        Boolean ValidateLoginForm() 
+        {
+            
+            if (string.IsNullOrEmpty(textBoxUsername.Text.Trim())) { LoginErrorProvider.SetError(textBoxUsername, "Field Required!"); return false; ; }
+            else { LoginErrorProvider.SetError(textBoxUsername, ""); }
+
+            if (string.IsNullOrEmpty(textBoxPassword.Text.Trim())) { LoginErrorProvider.SetError(textBoxPassword, "Field Required!"); return false; }
+            else { LoginErrorProvider.SetError(textBoxPassword, ""); }
+            return true;
+        }
+
+        private void buttonExit_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+
     }
 }

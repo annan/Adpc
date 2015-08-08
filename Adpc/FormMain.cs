@@ -101,5 +101,20 @@ namespace Adpc
                 childForm.Close();
             }
         }
+
+        private void FormMain_Load(object sender, EventArgs e)
+        {
+            login();
+        }
+        void login() {
+            FormLogin frmlogin = new FormLogin();
+            if (frmlogin.ShowDialog(this) == DialogResult.OK)
+            {
+                
+            }
+            else {
+               
+            }
+        }
     }
 }
