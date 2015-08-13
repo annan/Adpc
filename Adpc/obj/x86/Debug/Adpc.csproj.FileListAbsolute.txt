@@ -1,0 +1,7 @@
+C:\Users\cyril\Documents\aviance\Adpc\Adpc\bin\Debug\Adpc.exe
+C:\Users\cyril\Documents\aviance\Adpc\Adpc\bin\Debug\Adpc.pdb
+C:\Users\cyril\Documents\aviance\Adpc\Adpc\obj\x86\Debug\Adpc.FormMain.resources
+C:\Users\cyril\Documents\aviance\Adpc\Adpc\obj\x86\Debug\Adpc.Properties.Resources.resources
+C:\Users\cyril\Documents\aviance\Adpc\Adpc\obj\x86\Debug\Adpc.csproj.GenerateResource.Cache
+C:\Users\cyril\Documents\aviance\Adpc\Adpc\obj\x86\Debug\Adpc.exe
+C:\Users\cyril\Documents\aviance\Adpc\Adpc\obj\x86\Debug\Adpc.pdb
