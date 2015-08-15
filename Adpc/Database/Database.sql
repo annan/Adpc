@@ -75,6 +75,7 @@ CREATE TABLE `airport_cities`(
   PRIMARY KEY `declaration_id_key` (`declaration_id`),
   UNIQUE KEY `doc_number` (`doc_number`),
   CONSTRAINT `declaration_id_doc_idfk` FOREIGN KEY (`doc_id`),
+  );
 
   /* [KOD] */
   CREATE TABLE `doc_items` (
@@ -87,3 +88,15 @@ CREATE TABLE `airport_cities`(
   PRIMARY KEY `doc_id_key` (`doc_id`),
   UNIQUE KEY
   CONSTRAINT `doc_id_declaration_idfk` FOREIGN KEY (`declaration_id`),
+  );
+
+  /* [KOD] */
+  CREATE TABLE `pallets` (
+  `pallet_id` int(5) unsigned NOT NULL AUTO_INCREMENT,
+  `pallet_number` char(20) DEFAULT NULL,
+  PRIMARY KEY `pallet_id_KEY` (`pallet_id`),
+  UNIQUE KEY `pallet_number` (`pallet_number`),
+  );
+
+  /* [KOD] */
+  CREATE TABLE `final` (
