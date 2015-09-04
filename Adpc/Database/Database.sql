@@ -34,7 +34,7 @@ CREATE TABLE `airport_cities`(
   `created_date` datetime DEFAULT  NOW(),
   PRIMARY KEY `city_id_key` (`city_id`) ,
   UNIQUE KEY `city_id_code` (`city_code`),
-  CONSTRAINT `airport_cities_country_idfk` FOREIGN KEY (`country_id`) REFERENCES `Countries` (`id`)
+  CONSTRAINT `airport_cities_country_idfk` FOREIGN KEY (`country_id`) REFERENCES `Countries` (`country_id`)
   );
 
   /* [KOD] */
@@ -49,7 +49,7 @@ CREATE TABLE `airport_cities`(
   `active` tinyint(1) DEFAULT 1,
   `last_update_date` datetime DEFAULT  NOW(),
   PRIMARY KEY `user_id_key` (`user_id`) ,
-  UNIQUE KEY `login_name` (`login_name`),
+  UNIQUE KEY `login_name` (`login_name`)
   );
 
   /* [KOD] */
@@ -61,7 +61,7 @@ CREATE TABLE `airport_cities`(
   `active` tinyint(1) DEFAULT 1,
   PRIMARY KEY `permission_id_key`(`permission_id`),
   UNIQUE KEY `user_role` (`user_role`),
-  CONSTRAINT `permision_id_user_idfk` FOREIGN KEY (`user_id`),
+  CONSTRAINT `permision_id_user_idfk` FOREIGN KEY (`user_id`)
   );
 
   /* [KOD] */
@@ -74,7 +74,7 @@ CREATE TABLE `airport_cities`(
   `consignee_address` char(50) DEFAULT NULL,
   PRIMARY KEY `declaration_id_key` (`declaration_id`),
   UNIQUE KEY `doc_number` (`doc_number`),
-  CONSTRAINT `declaration_id_doc_idfk` FOREIGN KEY (`doc_id`),
+  CONSTRAINT `declaration_id_doc_idfk` FOREIGN KEY (`doc_id`)
   );
 
   /* [KOD] */
@@ -86,8 +86,7 @@ CREATE TABLE `airport_cities`(
   `gross_weight` int(10) unsigned NOT NULL,
   `unit_of_measure` char(20) DEFAULT NULL,
   PRIMARY KEY `doc_id_key` (`doc_id`),
-  UNIQUE KEY
-  CONSTRAINT `doc_id_declaration_idfk` FOREIGN KEY (`declaration_id`),
+  CONSTRAINT `doc_id_declaration_idfk` FOREIGN KEY (`declaration_id`)
   );
 
   /* [KOD] */
@@ -95,7 +94,7 @@ CREATE TABLE `airport_cities`(
   `pallet_id` int(5) unsigned NOT NULL AUTO_INCREMENT,
   `pallet_number` char(20) DEFAULT NULL,
   PRIMARY KEY `pallet_id_KEY` (`pallet_id`),
-  UNIQUE KEY `pallet_number` (`pallet_number`),
+  UNIQUE KEY `pallet_number` (`pallet_number`)
   );
 
   /* [KOD] */
