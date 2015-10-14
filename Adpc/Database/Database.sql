@@ -61,7 +61,7 @@ CREATE TABLE `airport_cities`(
   `active` tinyint(1) DEFAULT 1,
   PRIMARY KEY `permission_id_key`(`permission_id`),
   UNIQUE KEY `user_role` (`user_role`),
-  CONSTRAINT `permision_id_user_idfk` FOREIGN KEY (`user_id`)
+  CONSTRAINT `permision_id_user_idfk` FOREIGN KEY (`user_id`) REFERENCES `users` (`user_id`)
   );
 
   /* [KOD] */
