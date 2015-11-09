@@ -66,12 +66,12 @@ namespace Adpc
 
         private void ToolBarToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            toolStrip.Visible = toolBarToolStripMenuItem.Checked;
+            //toolStrip.Visible = toolBarToolStripMenuItem.Checked;
         }
 
         private void StatusBarToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            statusStrip.Visible = statusBarToolStripMenuItem.Checked;
+            //statusStrip.Visible = statusBarToolStripMenuItem.Checked;
         }
 
         private void CascadeToolStripMenuItem_Click(object sender, EventArgs e)
@@ -104,6 +104,7 @@ namespace Adpc
 
         private void FormMain_Load(object sender, EventArgs e)
         {
+            DisableMenus();
             login();
         }
         void login() {
@@ -113,8 +114,55 @@ namespace Adpc
                 
             }
             else {
-               
+                if (ClassGlobalMethods.hasUserLogin > 0)
+                {
+                    LabelLogin.Text = ClassGlobalMethods.Fullname;
+                    enableMenus();
+                    //this.close;
+                }
+                else 
+                { 
+                    DisableMenus(); 
+                }
             }
         }
+
+        void enableMenus()
+        {
+            setupToolStripMenuItem.Enabled = true;
+            //toolsMenu.Enabled = true;
+            loginToolStripMenuItem.Enabled = false;
+            logoutToolStripMenuItem.Enabled = true;
+        }
+
+        void DisableMenus()
+        {
+            setupToolStripMenuItem.Enabled = false;
+            //toolsMenu.Enabled = false;
+            loginToolStripMenuItem.Enabled = true;
+            logoutToolStripMenuItem.Enabled = false;
+        }
+        private void loginToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            login();
+        }
+
+        private void logoutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DisableMenus();
+            ClassGlobalMethods.hasUserLogin = 0;// Logout User
+            LabelLogin.Text = "";
+        }
+
+        private void countryToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormCountries childForm = new FormCountries();
+            childForm.MdiParent = this;
+            childForm.Text = "Window " + childFormNumber++;
+            childForm.Show();
+
+        }
+
+        
     }
 }

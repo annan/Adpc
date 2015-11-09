@@ -30,20 +30,22 @@
         {
             this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.username = new System.Windows.Forms.Label();
-            this.textBoxUsername = new System.Windows.Forms.TextBox();
+            this.labelLoginMsg = new System.Windows.Forms.Label();
+            this.labelError = new System.Windows.Forms.Label();
+            this.buttonExit = new System.Windows.Forms.Button();
+            this.buttonLogin = new System.Windows.Forms.Button();
             this.textBoxPassword = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.buttonLogin = new System.Windows.Forms.Button();
-            this.buttonExit = new System.Windows.Forms.Button();
+            this.textBoxUsername = new System.Windows.Forms.TextBox();
+            this.username = new System.Windows.Forms.Label();
             this.LoginErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
-            this.labelError = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.LoginErrorProvider)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.labelLoginMsg);
             this.panel1.Controls.Add(this.labelError);
             this.panel1.Controls.Add(this.buttonExit);
             this.panel1.Controls.Add(this.buttonLogin);
@@ -57,29 +59,53 @@
             this.panel1.Size = new System.Drawing.Size(586, 218);
             this.panel1.TabIndex = 0;
             // 
-            // username
+            // labelLoginMsg
             // 
-            this.username.AutoSize = true;
-            this.username.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.username.Location = new System.Drawing.Point(27, 44);
-            this.username.Name = "username";
-            this.username.Size = new System.Drawing.Size(124, 29);
-            this.username.TabIndex = 0;
-            this.username.Text = "Username";
+            this.labelLoginMsg.AutoSize = true;
+            this.labelLoginMsg.ForeColor = System.Drawing.Color.Red;
+            this.labelLoginMsg.Location = new System.Drawing.Point(176, 13);
+            this.labelLoginMsg.Name = "labelLoginMsg";
+            this.labelLoginMsg.Size = new System.Drawing.Size(18, 25);
+            this.labelLoginMsg.TabIndex = 7;
+            this.labelLoginMsg.Text = ".";
             // 
-            // textBoxUsername
+            // labelError
             // 
-            this.textBoxUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxUsername.Location = new System.Drawing.Point(176, 44);
-            this.textBoxUsername.Name = "textBoxUsername";
-            this.textBoxUsername.Size = new System.Drawing.Size(375, 35);
-            this.textBoxUsername.TabIndex = 1;
+            this.labelError.AutoSize = true;
+            this.labelError.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelError.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.labelError.Location = new System.Drawing.Point(176, 11);
+            this.labelError.Name = "labelError";
+            this.labelError.Size = new System.Drawing.Size(43, 29);
+            this.labelError.TabIndex = 6;
+            this.labelError.Text = "     ";
+            // 
+            // buttonExit
+            // 
+            this.buttonExit.Location = new System.Drawing.Point(176, 154);
+            this.buttonExit.Name = "buttonExit";
+            this.buttonExit.Size = new System.Drawing.Size(180, 52);
+            this.buttonExit.TabIndex = 5;
+            this.buttonExit.Text = "&Cancel";
+            this.buttonExit.UseVisualStyleBackColor = true;
+            this.buttonExit.Click += new System.EventHandler(this.buttonExit_Click);
+            // 
+            // buttonLogin
+            // 
+            this.buttonLogin.Location = new System.Drawing.Point(371, 154);
+            this.buttonLogin.Name = "buttonLogin";
+            this.buttonLogin.Size = new System.Drawing.Size(180, 52);
+            this.buttonLogin.TabIndex = 4;
+            this.buttonLogin.Text = "&Login";
+            this.buttonLogin.UseVisualStyleBackColor = true;
+            this.buttonLogin.Click += new System.EventHandler(this.buttonLogin_Click);
             // 
             // textBoxPassword
             // 
             this.textBoxPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxPassword.Location = new System.Drawing.Point(176, 105);
             this.textBoxPassword.Name = "textBoxPassword";
+            this.textBoxPassword.PasswordChar = '*';
             this.textBoxPassword.Size = new System.Drawing.Size(375, 35);
             this.textBoxPassword.TabIndex = 3;
             // 
@@ -93,40 +119,27 @@
             this.label2.TabIndex = 2;
             this.label2.Text = "Password";
             // 
-            // buttonLogin
+            // textBoxUsername
             // 
-            this.buttonLogin.Location = new System.Drawing.Point(371, 154);
-            this.buttonLogin.Name = "buttonLogin";
-            this.buttonLogin.Size = new System.Drawing.Size(180, 52);
-            this.buttonLogin.TabIndex = 4;
-            this.buttonLogin.Text = "&Login";
-            this.buttonLogin.UseVisualStyleBackColor = true;
-            this.buttonLogin.Click += new System.EventHandler(this.buttonLogin_Click);
+            this.textBoxUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxUsername.Location = new System.Drawing.Point(176, 44);
+            this.textBoxUsername.Name = "textBoxUsername";
+            this.textBoxUsername.Size = new System.Drawing.Size(375, 35);
+            this.textBoxUsername.TabIndex = 1;
             // 
-            // buttonExit
+            // username
             // 
-            this.buttonExit.Location = new System.Drawing.Point(176, 154);
-            this.buttonExit.Name = "buttonExit";
-            this.buttonExit.Size = new System.Drawing.Size(180, 52);
-            this.buttonExit.TabIndex = 5;
-            this.buttonExit.Text = "&Cancel";
-            this.buttonExit.UseVisualStyleBackColor = true;
-            this.buttonExit.Click += new System.EventHandler(this.buttonExit_Click);
+            this.username.AutoSize = true;
+            this.username.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.username.Location = new System.Drawing.Point(27, 44);
+            this.username.Name = "username";
+            this.username.Size = new System.Drawing.Size(124, 29);
+            this.username.TabIndex = 0;
+            this.username.Text = "Username";
             // 
             // LoginErrorProvider
             // 
             this.LoginErrorProvider.ContainerControl = this;
-            // 
-            // labelError
-            // 
-            this.labelError.AutoSize = true;
-            this.labelError.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelError.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.labelError.Location = new System.Drawing.Point(176, 11);
-            this.labelError.Name = "labelError";
-            this.labelError.Size = new System.Drawing.Size(43, 29);
-            this.labelError.TabIndex = 6;
-            this.labelError.Text = "     ";
             // 
             // FormLogin
             // 
@@ -139,6 +152,7 @@
             this.Name = "FormLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Login";
+            this.Load += new System.EventHandler(this.FormLogin_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.LoginErrorProvider)).EndInit();
@@ -157,6 +171,7 @@
         private System.Windows.Forms.Label username;
         private System.Windows.Forms.ErrorProvider LoginErrorProvider;
         private System.Windows.Forms.Label labelError;
+        private System.Windows.Forms.Label labelLoginMsg;
     }
 }
 

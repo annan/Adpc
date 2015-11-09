@@ -99,3 +99,7 @@ CREATE TABLE `airport_cities`(
 
   /* [KOD] */
   CREATE TABLE `final` (
+
+  /* SQL Statement */
+  
+--Insert into adpc.users(full_name,login_name,password,phone,e_mail,address,active,last_update_date) values('Admin Administrator','admin','admin','+23279157979','prince.koomson@africalink.sl','5 Liverpool street',1,sysdate());

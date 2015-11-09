@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using MySql.Data.MySqlClient;
 
-namespace Adpc.Data_Classes
+namespace Adpc
 {
     class ClassDatabaseCon
     {
@@ -17,9 +17,9 @@ namespace Adpc.Data_Classes
         public String ConnectionString()
         {
             server = "localhost";
-            database = "customsportal";
+            database = "adpc";
             uid = "root";
-            password = "database";//@LICData321
+            password = "database";
             string connectionStr;
             connectionStr = "SERVER=" + server + ";" + "DATABASE=" +
             database + ";" + "UID=" + uid + ";" + "PASSWORD=" + password + ";";
