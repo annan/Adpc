@@ -142,7 +142,7 @@ namespace Adpc
             loginToolStripMenuItem.Enabled = true;
             logoutToolStripMenuItem.Enabled = false;
         }
-        private void loginToolStripMenuItem_Click(object sender, EventArgs e)
+        private void loginToolStripMenuItem_Click(object nder, EventArgs e)
         {
             login();
         }
